@@ -1,0 +1,33 @@
+{% extends 'base.html' %} 
+
+{% block app_content %} 
+    <h1>{{ _('Sign In') }}</h1>
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }} {# 生成隐藏的div标签来渲染任何隐藏字段, 用来防止CSRF跨站支持伪造 #}
+        <p>
+            {# username是代表文本输入框的类StringField实例, StringField第一个参数label是描述名, 默认label=None, #}
+            {# 对应的表单类字段实例属性会渲染成相应的HTML表单元素, #}
+            {{ form.username.label }}<br>
+            {{ form.username(size=32) }}<br> {# 额外的HTML元素属性可以通过关键字参数形式attribut=value传入来转化成对应的HTML属性 #}
+            {% for error in form.username.errors %}  {# 任意带有验证函数validators=[]的字段都会有验证结果生成的报错信息,  报错信息来自form.field.errors #}
+            <span style="color: red;">[{{ error }}]</span> {# 可能不止一个验证函数要给用户呈现报错信息, 所以是列表 #}
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.password.label }}<br>
+            {{ form.password(size=32) }}<br> {# 因此一旦传入属性, 就可以利用CSS类或者ID选择器来样式化表单字段 #}
+            {% for error in form.password.errors %} {# 验证时自动生成错误信息, 定义成字段类实例的属性errors, errors是一个列表 #}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
+
+        <p>{{ form.submit() }}</p>
+        <p>
+            {{ _('Forget Your Password?') }}
+            <a href="{{ url_for('auth.reset_password_request') }}">{{ _('Click to Reset It') }}</a>
+        </p>
+    </form>
+    
+    <p>{{ _('New User?') }}<a href="{{ url_for('auth.register') }}">{{ _('Click to Register!') }}</a></p>
+{% endblock %}

@@ -1,0 +1,85 @@
+{% extends 'base.html' %} 
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %} 
+<table class="table table-hover">
+    <tr>
+        <td width="70px">
+            <a href="{{ url_for('main.user', username=post.author.username) }}">
+                <img src="{{ avatars.robohash(post.author.username, size='50') }}">
+            </a>
+        </td>
+        <td>
+            {% set user_link %} 
+                <a href="{{ url_for('main.user', username=post.author.username) }}">
+                    {{ post.author.username }}
+                </a>
+            {% endset %}
+            {{ _('%(username)s said %(when)s', username=user_link, when=moment(post.timestamp).fromNow()) }}
+            <br>
+            {% if post.body_html %}
+                <span id='post{{ post.id }}'>{{ post.body_html | safe }}</span>
+            {% else %} 
+                {{ post.body }}
+            {% endif %}
+            <div style="text-align: right;">
+                <a href="{{ url_for('main.comment', id=post.id) }}">{{ _('%(total)d comments', total=post.comments.count()) }}</a>
+            </div>
+        </td>
+        {% if post.language and post.language != g.locale %} 
+        <br><br>
+        <span id="translation{{ post.id }}">
+            <a href="javascript:translate(
+                            '#post{{ post.id }}',
+                            '#translation{{ post.id }}',
+                            '{{ post.language }}',
+                            '{{ g.locale }}');">{{ _('Translate') }}</a>
+        </span>
+        {% endif %}
+    </tr>
+</table>
+<h4>{{ _('Comments') }}</h4>
+{% if form %}
+    {{ wtf.quick_form(form) }}
+{% endif %}
+{% for comment in comments %} 
+<table class="table table-hover">
+    <tr>
+        <td width="70px">
+            <a href="{{ url_for('main.user', username=comment.author.username) }}">
+                <img src="{{ avatars.robohash(comment.author.username, size='50') }}">
+            </a>
+        </td>
+        <td>
+            {% set user_link %} 
+                <a href="{{ url_for('main.user', username=comment.author.username) }}">
+                    {{ comment.author.username }}
+                </a>
+            {% endset %}
+            {{ _('%(username)s said %(when)s', username=user_link, when=moment(comment.timestamp).fromNow()) }}
+            <br>
+            {% if comment.body_html %} 
+                <span id='comment{{ comment.id }}'>{{ comment.body_html | safe }}</span>
+            {% else %} 
+                {{ comment.body }}
+            {% endif %}
+            <div style="text-align: right;">
+                {% if comment.user_id == current_user.id %} 
+                    <form method="post" action="{{ url_for('main.delete_comment', id=comment.id) }}" style="display: inline;">
+                        {{ form.hidden_tag() }}
+                        <input class="btn" type="submit" name="delete" value="{{ _('Delete') }}">
+                    </form>
+                    <i class="glyphicon glyphicon-thumbs-up" style="padding: 0em 0.5em";></i>
+                    <i class="glyphicon glyphicon-thumbs-down" style="padding: 0em 0.5em";></i>
+                {% endif %}
+            </div>
+        </td>
+    </tr>
+</table>
+{% endfor %}
+{% endblock %}
+
+{% block scripts %} 
+{{ super() }}
+{{ pagedown.include_pagedown() }}
+{% endblock %} 

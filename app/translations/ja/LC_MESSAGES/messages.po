@@ -1,0 +1,392 @@
+# Japanese translations for PROJECT.
+# Copyright (C) 2022 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2023-11-06 19:25+0800\n"
+"PO-Revision-Date: 2023-11-06 19:28+0800\n"
+"Last-Translator: JTPing <JTPing@outlook.com>\n"
+"Language-Team: ja <LL@li.org>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Generated-By: Babel 2.11.0\n"
+"X-Generator: Poedit 3.2.2\n"
+
+#: app/__init__.py:27
+msgid "Please log in to access this page."
+msgstr "このページにアクセスするにはログインしてください."
+
+#: app/translate.py:8
+msgid "Error: the translation service is not configured."
+msgstr "エラー: 翻訳サービスが構成されていません."
+
+#: app/translate.py:15
+msgid "Error: the translation servie failed."
+msgstr "エラー: 翻訳サービスが失敗しました."
+
+#: app/auth/email.py:7
+msgid "[Microblog] Reset your password"
+msgstr "[Microblog] パスワードをリセットする"
+
+#: app/auth/forms.py:10 app/auth/forms.py:16 app/main/forms.py:11
+msgid "Username"
+msgstr "ユーザー名"
+
+#: app/auth/forms.py:11 app/auth/forms.py:18 app/auth/forms.py:42
+msgid "Password"
+msgstr "パスワード"
+
+#: app/auth/forms.py:12
+msgid "Remember Me"
+msgstr "私を覚えて"
+
+#: app/auth/forms.py:13 app/auth/routes.py:30 app/templates/auth/login.html:4
+msgid "Sign In"
+msgstr "サインイン"
+
+#: app/auth/forms.py:17 app/auth/forms.py:38
+msgid "Email"
+msgstr "電子メール"
+
+#: app/auth/forms.py:20 app/auth/forms.py:43
+msgid "Repeat Password"
+msgstr "パスワードの再入力"
+
+#: app/auth/forms.py:21 app/auth/routes.py:49
+#: app/templates/auth/register.html:5
+msgid "Register"
+msgstr "登録する"
+
+#: app/auth/forms.py:29
+msgid "Please enter a different username."
+msgstr "別のユーザー名を入力してください."
+
+#: app/auth/forms.py:35
+msgid "Please enter a different email."
+msgstr "別のメールアドレスを入力してください."
+
+#: app/auth/forms.py:39 app/auth/forms.py:44
+msgid "Request Password Reset"
+msgstr "パスワードのリセットの要求"
+
+#: app/auth/routes.py:21
+msgid "Invalid username or password"
+msgstr "ユーザー名またはパスワードが無効です"
+
+#: app/auth/routes.py:47
+msgid "Congratulations, you are now a registered user!"
+msgstr "おめでとうございます、あなたは今登録ユーザーです!"
+
+#: app/auth/routes.py:60
+msgid "Check your password for the instructions to reset your password"
+msgstr "パスワードをリセットする手順については、パスワードを確認してください"
+
+#: app/auth/routes.py:62 app/templates/auth/reset_password_request.html:6
+msgid "Reset Password"
+msgstr "パスワードのリセット"
+
+#: app/auth/routes.py:75
+msgid "Your password has been reset successfully."
+msgstr "パスワードが正常にリセットされました."
+
+#: app/main/forms.py:12
+msgid "About me"
+msgstr "私について"
+
+#: app/main/forms.py:13 app/main/forms.py:28 app/main/forms.py:45
+#: app/main/forms.py:49 app/main/forms.py:59
+msgid "Submit"
+msgstr "送信"
+
+#: app/main/forms.py:24
+msgid "Sorry, this username has already been registered."
+msgstr "申し訳ありませんが、このユーザー名はすでに登録されています."
+
+#: app/main/forms.py:27
+msgid "Say something"
+msgstr "何かいってください"
+
+#: app/main/forms.py:34 app/main/routes.py:172
+msgid "Search"
+msgstr "捜索"
+
+#: app/main/forms.py:52 app/main/forms.py:55 app/templates/_post.html:37
+#: app/templates/comment.html:70
+msgid "Delete"
+msgstr "削除"
+
+#: app/main/forms.py:58
+msgid "Message"
+msgstr "メッセージ"
+
+#: app/main/routes.py:38
+msgid "Your post is now live!"
+msgstr "あなたの投稿が公開されました!"
+
+#: app/main/routes.py:47 app/templates/base.html:29
+msgid "Home"
+msgstr "ホームページ"
+
+#: app/main/routes.py:61 app/templates/base.html:30
+msgid "Explore"
+msgstr "探る"
+
+#: app/main/routes.py:88
+msgid "Your changes have been saved."
+msgstr "変更内容が保存されました."
+
+#: app/main/routes.py:93 app/templates/edit_profile.html:5
+msgid "Edit Profile"
+msgstr "プロファイルの編集"
+
+#: app/main/routes.py:119 app/main/routes.py:138
+#, python-format
+msgid "User %(username)s not found"
+msgstr "ユーザー %(username)s が見つかりません"
+
+#: app/main/routes.py:122
+msgid "You can't follow yourself!"
+msgstr "あなたは自分自身をフォローすることはできません!"
+
+#: app/main/routes.py:126
+#, python-format
+msgid "You are following %(username)s now"
+msgstr "あなたは今%(username)sをフォローしています"
+
+#: app/main/routes.py:141
+msgid "You can't unfollow yourself!"
+msgstr "自分のフォローを解除することはできません!"
+
+#: app/main/routes.py:145
+#, python-format
+msgid "You are not following %(username)s now"
+msgstr "現在、%(username)sをフォローしていません"
+
+#: app/main/routes.py:161
+msgid "empty input"
+msgstr "空の入力"
+
+#: app/main/routes.py:163
+msgid "valid input"
+msgstr "有効な入力"
+
+#: app/main/routes.py:185
+msgid "Your comment has been published."
+msgstr "コメントが公開されました."
+
+#: app/main/routes.py:201
+#, fuzzy
+msgid "Comment deleted."
+msgstr "投稿は削除されました."
+
+#: app/main/routes.py:220
+msgid "file uploaded successfully!"
+msgstr "ファイルが正常にアップロードされました!"
+
+#: app/main/routes.py:239
+msgid "Post deleted."
+msgstr "投稿は削除されました."
+
+#: app/main/routes.py:249
+msgid "Sorry, you can only edit your own post."
+msgstr "申し訳ありませんが、編集できるのは自分の投稿のみです."
+
+#: app/main/routes.py:256
+msgid "The post has been updated."
+msgstr "投稿が更新されました."
+
+#: app/main/routes.py:279
+msgid "Your message has been sent."
+msgstr "メッセージが送信されました."
+
+#: app/main/routes.py:281
+msgid "Send Message"
+msgstr "メッセージ送信"
+
+#: app/templates/_post.html:16 app/templates/comment.html:18
+#: app/templates/comment.html:59
+#, python-format
+msgid "%(username)s said %(when)s"
+msgstr "%(username)s 前記 %(when)s"
+
+#: app/templates/_post.html:22 app/templates/_post.html:30
+msgid "Read More"
+msgstr "続きを読む"
+
+#: app/templates/_post.html:42
+msgid "Edit"
+msgstr "編集"
+
+#: app/templates/_post.html:43 app/templates/comment.html:26
+#, python-format
+msgid "%(total)d comments"
+msgstr "%(total)d コメント"
+
+#: app/templates/_post.html:53 app/templates/comment.html:36
+msgid "Translate"
+msgstr "翻訳"
+
+#: app/templates/base.html:12
+msgid "Weclome to Microblog"
+msgstr "ウェクローム Microblog"
+
+#: app/templates/base.html:31
+msgid "File"
+msgstr "ファイル"
+
+#: app/templates/base.html:42
+msgid "Login"
+msgstr "ログイン"
+
+#: app/templates/base.html:45 app/templates/messages.html:4
+msgid "Messages"
+msgstr "メッセージ"
+
+#: app/templates/base.html:54
+msgid "Profile"
+msgstr "プロフィール"
+
+#: app/templates/base.html:55
+msgid "Logout"
+msgstr "ログアウト"
+
+#: app/templates/base.html:92
+msgid "Error: Could not contact server."
+msgstr "エラー: サーバーに接続できませんでした."
+
+#: app/templates/comment.html:41
+msgid "Comments"
+msgstr "コメント"
+
+#: app/templates/edit_post.html:8
+msgid "Edit Post"
+msgstr "投稿の編集"
+
+#: app/templates/explore.html:5 app/templates/index.html:5
+#, python-format
+msgid "Hi, %(username)s!"
+msgstr "こんにちは，%(username)s!"
+
+#: app/templates/explore.html:13 app/templates/index.html:16
+#: app/templates/user.html:47
+msgid "Newer posts"
+msgstr "新しい投稿"
+
+#: app/templates/explore.html:18 app/templates/index.html:21
+#: app/templates/user.html:52
+msgid "Older posts"
+msgstr "古い投稿"
+
+#: app/templates/messages.html:12
+msgid "Newer messages"
+msgstr "新しいメッセージ"
+
+#: app/templates/messages.html:17
+msgid "Older messages"
+msgstr "古いメッセージ"
+
+#: app/templates/search.html:4
+msgid "Search Results"
+msgstr "検索結果"
+
+#: app/templates/search.html:13
+msgid "Previous results"
+msgstr "以前の結果"
+
+#: app/templates/search.html:18
+msgid "Next results"
+msgstr "次の結果"
+
+#: app/templates/send_message.html:5
+#, python-format
+msgid "Send Message to %(recipient)s"
+msgstr "メッセージの送信先 %(recipient)s"
+
+#: app/templates/upload.html:7
+msgid "Upload new File"
+msgstr "新しいファイルをアップロードする"
+
+#: app/templates/user.html:8
+msgid "User"
+msgstr "ユーザー"
+
+#: app/templates/user.html:13 app/templates/user_popup.html:13
+msgid "Last seen on"
+msgstr "最後に見た日時"
+
+#: app/templates/user.html:15 app/templates/user_popup.html:16
+#, python-format
+msgid "%(count)d followers"
+msgstr "%(count)d 取り巻き"
+
+#: app/templates/user.html:15 app/templates/user_popup.html:17
+#, python-format
+msgid "%(count)d following"
+msgstr "%(count)d フォロー"
+
+#: app/templates/user.html:17
+msgid "Edit your profile"
+msgstr "プロフィールを編集する"
+
+#: app/templates/user.html:22
+msgid "follow"
+msgstr "フォロー"
+
+#: app/templates/user.html:29
+msgid "unfollow"
+msgstr "フォロー解除"
+
+#: app/templates/user.html:34
+msgid "Send private message"
+msgstr "プライベートメッセージを送る"
+
+#: app/templates/user_popup.html:24
+msgid "Follow"
+msgstr "フォロー"
+
+#: app/templates/user_popup.html:31
+msgid "Unfollow"
+msgstr "フォロー解除"
+
+#: app/templates/auth/login.html:27
+msgid "Forget Your Password?"
+msgstr "パスワードをお忘れですか?"
+
+#: app/templates/auth/login.html:28
+msgid "Click to Reset It"
+msgstr "クリックしてリセット"
+
+#: app/templates/auth/login.html:32
+msgid "New User?"
+msgstr "新規ユーザー？"
+
+#: app/templates/auth/login.html:32
+msgid "Click to Register!"
+msgstr "クリックして登録!"
+
+#: app/templates/auth/reset_password.html:5
+msgid "Reset Your Password"
+msgstr "パスワードをリセットする"
+
+#: app/templates/errors/404.html:4
+msgid "Page Not Found"
+msgstr "ページが見つかりません"
+
+#: app/templates/errors/404.html:5 app/templates/errors/500.html:6
+msgid "Go Back"
+msgstr "戻ってください"
+
+#: app/templates/errors/500.html:4
+msgid "An unexpected error has occured"
+msgstr "予期しないエラーが発生しました"
+
+#: app/templates/errors/500.html:5
+msgid "The administrator has been notified. Sorry for the inconvenience!"
+msgstr "管理者に通知されました。ご迷惑をおかけして申し訳ありません!"
