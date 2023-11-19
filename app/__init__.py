@@ -37,6 +37,7 @@ def create_app(config_class=Config):
    app.config.from_object(config_class)
    app.config.from_prefixed_env()
 
+
    mail.init_app(app) # bind instance to application
    db.init_app(app)
    migrate.init_app(app, db)
