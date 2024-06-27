@@ -205,7 +205,8 @@ def delete_comment(id):
 def allowed_file(filename):
     return '.' in filename and \
         filename.rsplit('.', 1)[1].lower() in current_app.config['ALLOWED_EXTENSIONS']
-
+    
+current_app.config['UPLOAD_FOLDER'] = "home/JTPing/microblog/upload_folder"
 @bp.route('/upload', methods=['GET', 'POST'])
 @login_required
 def upload():
