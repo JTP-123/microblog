@@ -209,7 +209,7 @@ def allowed_file(filename):
 @bp.route('/upload', methods=['GET', 'POST'])
 @login_required
 def upload():
-    current_app.config['UPLOAD_FOLDER'] = "/home/JTPing/microblog/upload_folder"
+    current_app.config['UPLOAD_FOLDER'] = /home/JTPing/microblog/upload_folder
     form = FileForm()
     if form.validate_on_submit():
         f = form.file.data 
