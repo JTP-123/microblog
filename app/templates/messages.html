@@ -2,8 +2,13 @@
 
 {% block app_content %} 
     <h1>{{ _('Messages') }}</h1>
-    {% for post in messages %} 
-        {% include '_post.html' %} 
+    {% for message in messages %} 
+        <div class="message">
+            <!-- 自定义消息显示格式 -->
+            <a href="{{ url_for('main.message', id=message.id) }}">
+                {{ _('View message') }}
+            </a>
+        </div>
     {% endfor %}
     <nav aria-label="...">
         <ul class="pager">
