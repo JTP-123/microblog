@@ -6,9 +6,7 @@
         <div class="message">
             <!-- 自定义消息显示格式 -->
             <a href="{{ url_for('main.messages', id=message.id) }}">
-                <dialog open>
                     {{ message.body }}
-                </dialog>
             </a>
         </div>
     {% endfor %}
